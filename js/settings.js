@@ -1,16 +1,20 @@
-var fireballSize = 22;
-var getFireballSpeed = function(left) {
+'use strict';
+
+window.fireballSize = 22;
+window.getFireballSpeed = function (left) {
   return left ? 5 : 2;
 };
-var wizardSpeed = 3;
+window.wizardSpeed = 3;
 var wizardWidth = 70;
-var getWizardHeight = function(wizardWidth) {
-  return wizardWidth * 1.337;
+window.getWizardHeight = function (width) {
+  return width * 1.337;
 };
 
-var getWizardX = function(width) {
+window.getWizardX = function (width) {
   return width / 2 - wizardWidth / 2;
 };
-var getWizardY = function(height) {
-  return height * 2 / 3 - getWizardHeight(wizardWidth) / 2;
-}
+
+window.getWizardY = function (height) {
+  return height * 2 / 3 - window.getWizardHeight(wizardWidth) / 2;
+};
+
