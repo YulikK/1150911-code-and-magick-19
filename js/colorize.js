@@ -13,6 +13,9 @@
     var color;
     if (colors && colors.length > 0) {
       color = colors[Math.floor(colors.length * Math.random())];
+    } else {
+      color = 'black';
+      window.console.log('Не удалось изменить цвет');
     }
     return color;
   };
