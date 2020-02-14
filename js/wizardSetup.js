@@ -15,11 +15,11 @@ window.createSimilarWizards = function () {
   similarListElement.innerHTML = '';
 
   for (var i = 0; i < 4; i++) {
-    wizards[i] = {
+    wizards.push({
       name: window.WIZARD_NAMES[Math.floor(Math.random() * window.WIZARD_NAMES.length)] + ' ' + window.WIZARD_SERNAMES[Math.floor(Math.random() * window.WIZARD_SERNAMES.length)],
       coatColor: window.WIZARD_COAT[Math.floor(Math.random() * window.WIZARD_COAT.length)],
       eyesColor: window.WIZARD_EYES[Math.floor(Math.random() * window.WIZARD_EYES.length)]
-    };
+    });
   }
 
   var renderWizard = function (wizard) {

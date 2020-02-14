@@ -10,7 +10,11 @@
     } else if (evt.target.matches('.setup-fireball')) {
       colors = window.WIZARD_FIREBALL;
     }
-    return colors[Math.floor(colors.length * Math.random())];
+    var color;
+    if (colors && colors.length > 0) {
+      color = colors[Math.floor(colors.length * Math.random())];
+    }
+    return color;
   };
 
   var onColorChange = function (evt) {
