@@ -9,15 +9,11 @@
       colors = window.WIZARD_COAT;
     } else if (evt.target.matches('.setup-fireball')) {
       colors = window.WIZARD_FIREBALL;
-    }
-    var color;
-    if (colors && colors.length > 0) {
-      color = colors[Math.floor(colors.length * Math.random())];
     } else {
-      color = 'black';
+      colors = ['black'];
       window.console.log('Не удалось изменить цвет');
     }
-    return color;
+    return colors[Math.floor(colors.length * Math.random())];
   };
 
   var onColorChange = function (evt) {
