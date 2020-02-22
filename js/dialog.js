@@ -4,6 +4,7 @@
   var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
+  var form = setup.querySelector('.setup-wizard-form');
 
   var onPopupEscPress = function (evt) {
     window.util.isEscEvent(evt, closePopup);
@@ -30,7 +31,6 @@
 
   var openPopup = function () {
     setup.classList.remove('hidden');
-    setup.querySelector('.setup-similar').classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
     window.getStartXY();
   };
@@ -41,4 +41,12 @@
     setup.querySelector('.setup-similar').classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
   };
+
+
+  form.addEventListener('submit', function (evt) {
+    window.backend.save(new FormData(form), function () {
+      setup.classList.add('hidden');
+    }, window.errorHandler);
+    evt.preventDefault();
+  });
 })();
