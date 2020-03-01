@@ -14,7 +14,7 @@
     return colors[Math.floor(colors.length * Math.random())];
   };
 
-  var onColorChange = function (evt) {
+  window.onColorChange = function (evt) {
     var color = getRandomColor(evt);
     var setup = document.querySelector('.setup');
     var coatColor = setup.querySelector('input[name="coat-color"]');
@@ -28,19 +28,14 @@
       evt.target.style.fill = color;
       if (evt.target.matches('.wizard-eyes')) {
         eyesColor.value = color;
+        window.wizard.onEyesChange(color);
       } else if (evt.target.matches('.wizard-coat')) {
         coatColor.value = color;
+        window.wizard.onCoatChange(color);
       } else {
         window.errorHandler('Ошибка установки цвета. Неизвестный источник.');
       }
     }
   };
 
-  window.colorizeStart = function (element) {
-    element.addEventListener('click', onColorChange);
-  };
-
-  window.colorizeStop = function (element) {
-    element.removeEventListener('click', onColorChange);
-  };
 })();
