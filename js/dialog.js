@@ -11,7 +11,7 @@
   };
 
   setupOpen.addEventListener('click', function () {
-    window.createSimilarWizards();
+    // window.createSimilarWizards();
     openPopup();
     window.afterOpenPopup();
   });
